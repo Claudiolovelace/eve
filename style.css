@@ -1,0 +1,1538 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #164e63,
+            #071a2b 45%,
+            #020817
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.contenedor {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 50px 0;
+}
+
+
+/* =========================================
+   INTRODUCCIÓN
+========================================= */
+
+.inicio {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.miniTitulo {
+
+    color: #90e0ef;
+
+    font-size: 1rem;
+
+    margin-bottom: 15px;
+}
+
+
+.inicio h1 {
+
+    font-size:
+        clamp(
+            2.5rem,
+            8vw,
+            5rem
+        );
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 20px #48cae4;
+}
+
+
+.inicio h1 span {
+
+    color: #48cae4;
+}
+
+
+.subtitulo {
+
+    color: #caf0f8;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.tarjeta {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid
+        rgba(144,224,239,0.3);
+
+    box-shadow:
+        0 0 30px
+        rgba(72,202,228,0.15);
+
+    backdrop-filter: blur(10px);
+
+    animation:
+        aparecer
+        1s
+        ease;
+}
+
+
+.florIcono {
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+}
+
+
+.tarjeta h2 {
+
+    color: #90e0ef;
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+
+.tarjeta p {
+
+    color: #dffaff;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+
+.tarjeta .especial {
+
+    color: #48cae4;
+
+    font-weight: bold;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   FRASES RANDOM
+========================================= */
+
+.random {
+
+    margin: 40px auto;
+
+    max-width: 650px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,0,0,0.25);
+
+    border:
+        1px solid
+        rgba(72,202,228,0.3);
+}
+
+
+.emojiRandom {
+
+    font-size: 35px;
+}
+
+
+#frase {
+
+    margin-top: 12px;
+
+    min-height: 25px;
+
+    color: #caf0f8;
+
+    transition:
+        opacity
+        0.3s
+        ease;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.botonSeccion {
+
+    text-align: center;
+
+    margin: 50px 0;
+}
+
+
+.botonSeccion p {
+
+    margin-bottom: 20px;
+
+    color: #caf0f8;
+}
+
+
+#botonFeliz {
+
+    padding:
+        18px
+        35px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0077b6,
+            #48cae4
+        );
+
+    color: white;
+
+    font-size: 1.1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px
+        rgba(72,202,228,0.5);
+
+    transition:
+        transform
+        0.2s,
+        box-shadow
+        0.2s;
+}
+
+
+#botonFeliz:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 0 40px
+        rgba(72,202,228,0.8);
+}
+
+
+#botonFeliz:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   PANTALLA DE HACKEO
+========================================= */
+
+#hackScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #300000,
+            #080000 60%,
+            #000000
+        );
+
+    color: #ff3333;
+}
+
+
+#hackScreen.mostrar {
+
+    display: flex;
+
+    animation:
+        aparecerHack
+        0.3s
+        ease;
+}
+
+
+.hackContenido {
+
+    width: 90%;
+
+    max-width: 800px;
+}
+
+
+.alerta {
+
+    font-size: 80px;
+
+    animation:
+        alarma
+        0.5s
+        infinite
+        alternate;
+}
+
+
+.hackContenido h1 {
+
+    font-family:
+        monospace;
+
+    font-size:
+        clamp(
+            2rem,
+            8vw,
+            5.5rem
+        );
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 10px red,
+        0 0 30px red,
+        0 0 60px red;
+
+    animation:
+        parpadeo
+        0.5s
+        infinite;
+}
+
+
+#hackTexto {
+
+    margin-top: 25px;
+
+    font-family:
+        monospace;
+
+    font-size:
+        clamp(
+            1rem,
+            3vw,
+            1.5rem
+        );
+
+    color: #ff7777;
+}
+
+
+.barra {
+
+    width: 100%;
+
+    height: 20px;
+
+    margin-top: 30px;
+
+    border:
+        1px solid red;
+
+    background:
+        #190000;
+
+    overflow: hidden;
+}
+
+
+#progreso {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        red;
+
+    box-shadow:
+        0 0 20px red;
+
+    transition:
+        width
+        0.15s
+        linear;
+}
+
+
+#porcentaje {
+
+    margin-top: 10px;
+
+    font-family:
+        monospace;
+
+    font-size: 1.2rem;
+}
+
+
+.hackPequeno {
+
+    margin-top: 25px;
+
+    color: #ff7777;
+
+    font-family:
+        monospace;
+}
+
+
+/* =========================================
+   RAMO DE 5 FLORES AZULES
+   HECHO SOLO CON CSS
+========================================= */
+
+#ramoFlores {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10001;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    pointer-events: none;
+
+    background:
+        rgba(0,8,20,0.35);
+}
+
+
+#ramoFlores.mostrar {
+
+    display: flex;
+
+    animation:
+        aparecerRamo
+        0.8s
+        ease
+        forwards;
+}
+
+
+.ramoCSS {
+
+    position: relative;
+
+    width: 420px;
+
+    height: 520px;
+
+    transform:
+        scale(0)
+        translateY(150px);
+
+    animation:
+        entradaRamo
+        1.3s
+        cubic-bezier(
+            .17,
+            .67,
+            .35,
+            1.3
+        )
+        forwards;
+}
+
+
+/* =========================================
+   FLORES
+========================================= */
+
+.flor {
+
+    position: absolute;
+
+    width: 105px;
+
+    height: 105px;
+
+    z-index: 5;
+
+    animation:
+        movimientoFlor
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+/* FLORES 1-5 */
+
+.flor1 {
+
+    left: 155px;
+
+    top: 35px;
+}
+
+
+.flor2 {
+
+    left: 55px;
+
+    top: 100px;
+
+    transform:
+        scale(0.9);
+}
+
+
+.flor3 {
+
+    right: 45px;
+
+    top: 105px;
+
+    transform:
+        scale(0.9);
+}
+
+
+.flor4 {
+
+    left: 100px;
+
+    top: 190px;
+
+    transform:
+        scale(0.82);
+}
+
+
+.flor5 {
+
+    right: 95px;
+
+    top: 195px;
+
+    transform:
+        scale(0.82);
+}
+
+
+/* =========================================
+   PÉTALOS
+========================================= */
+
+.petalo {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 48px;
+
+    height: 70px;
+
+    margin-left: -24px;
+
+    margin-top: -35px;
+
+    border-radius:
+        50%
+        50%
+        45%
+        45%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #bdefff,
+            #48cae4 45%,
+            #0077b6
+        );
+
+    transform-origin:
+        center
+        bottom;
+
+    box-shadow:
+        inset
+        0 0 12px
+        rgba(255,255,255,0.35),
+
+        0 0 12px
+        rgba(72,202,228,0.45);
+}
+
+
+.p1 {
+
+    transform:
+        translateY(-27px)
+        rotate(0deg);
+}
+
+
+.p2 {
+
+    transform:
+        translateY(-27px)
+        rotate(72deg);
+}
+
+
+.p3 {
+
+    transform:
+        translateY(-27px)
+        rotate(144deg);
+}
+
+
+.p4 {
+
+    transform:
+        translateY(-27px)
+        rotate(216deg);
+}
+
+
+.p5 {
+
+    transform:
+        translateY(-27px)
+        rotate(288deg);
+}
+
+
+/* =========================================
+   CENTRO DE LAS FLORES
+========================================= */
+
+.centro {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 30px;
+
+    height: 30px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff7ae,
+            #ffd166 45%,
+            #e09f00
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(255,209,102,0.8);
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   TALLOS
+========================================= */
+
+.tallos {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    top: 175px;
+
+    height: 280px;
+
+    z-index: 2;
+}
+
+
+.talloCSS {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 280px;
+
+    left: 50%;
+
+    top: 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #14532d,
+            #22c55e,
+            #166534
+        );
+
+    transform-origin:
+        top center;
+
+    box-shadow:
+        0 0 5px
+        rgba(34,197,94,0.3);
+}
+
+
+.t1 {
+
+    transform:
+        translateX(-50%)
+        rotate(-7deg);
+}
+
+
+.t2 {
+
+    transform:
+        translateX(-50%)
+        rotate(-24deg);
+}
+
+
+.t3 {
+
+    transform:
+        translateX(-50%)
+        rotate(23deg);
+}
+
+
+.t4 {
+
+    transform:
+        translateX(-50%)
+        rotate(-13deg);
+}
+
+
+.t5 {
+
+    transform:
+        translateX(-50%)
+        rotate(14deg);
+}
+
+
+/* =========================================
+   HOJAS
+========================================= */
+
+.hoja {
+
+    position: absolute;
+
+    width: 75px;
+
+    height: 35px;
+
+    z-index: 3;
+
+    border-radius:
+        100%
+        0
+        100%
+        0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4ade80,
+            #166534
+        );
+
+    box-shadow:
+        inset
+        0 0 8px
+        rgba(255,255,255,0.2);
+}
+
+
+.h1 {
+
+    left: 80px;
+
+    top: 350px;
+
+    transform:
+        rotate(25deg);
+}
+
+
+.h2 {
+
+    right: 75px;
+
+    top: 370px;
+
+    transform:
+        rotate(150deg);
+}
+
+
+.h3 {
+
+    left: 115px;
+
+    top: 410px;
+
+    transform:
+        rotate(10deg);
+}
+
+
+.h4 {
+
+    right: 110px;
+
+    top: 425px;
+
+    transform:
+        rotate(170deg);
+}
+
+
+/* =========================================
+   ENVOLTORIO
+========================================= */
+
+.envoltorio {
+
+    position: absolute;
+
+    z-index: 6;
+
+    left: 50%;
+
+    bottom: 5px;
+
+    width: 270px;
+
+    height: 210px;
+
+    transform:
+        translateX(-50%);
+
+    clip-path:
+        polygon(
+            12% 0,
+            88% 0,
+            68% 100%,
+            32% 100%
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #93c5fd 45%,
+            #60a5fa
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(96,165,250,0.4);
+
+    opacity: 0.92;
+}
+
+
+/* =========================================
+   FLORES AZULES FLOTANTES
+========================================= */
+
+#flores {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+.florAzul {
+
+    position: absolute;
+
+    bottom: -100px;
+
+    width: 25px;
+
+    height: 25px;
+
+    border-radius: 50%;
+
+    background:
+        #48cae4;
+
+    opacity: 0;
+
+    box-shadow:
+        0 0 15px
+        #48cae4;
+
+    animation:
+        florSubir
+        5s
+        ease-out
+        forwards;
+}
+
+
+/* =========================================
+   MENSAJE FINAL
+========================================= */
+
+#mensajeFinal {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    animation:
+        aparecer
+        1s
+        ease;
+}
+
+
+#mensajeFinal.mostrar {
+
+    display: block;
+}
+
+
+#mensajeFinal h2 {
+
+    color: #90e0ef;
+
+    font-size:
+        clamp(
+            2rem,
+            7vw,
+            4rem
+        );
+
+    text-shadow:
+        0 0 20px #48cae4,
+        0 0 40px #48cae4;
+
+    margin: 25px 0;
+}
+
+
+#mensajeFinal p {
+
+    color: #caf0f8;
+
+    font-size: 1.2rem;
+}
+
+
+.confeti {
+
+    font-size: 30px;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================================
+   GALERÍA BL
+========================================= */
+
+#galeriaBL {
+
+    display: none;
+
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+
+#galeriaBL.mostrar {
+
+    display: block;
+
+    animation:
+        aparecer
+        1s
+        ease;
+}
+
+
+.tituloBL {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.tituloBL h2 {
+
+    color: #90e0ef;
+
+    font-size:
+        clamp(
+            1.5rem,
+            5vw,
+            2.5rem
+        );
+}
+
+
+.tituloBL span {
+
+    font-size: 30px;
+}
+
+
+.subtituloBL {
+
+    margin:
+        15px 0 30px;
+
+    color: #caf0f8;
+}
+
+
+.fotos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 25px;
+}
+
+
+.foto {
+
+    position: relative;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border:
+        2px solid
+        rgba(72,202,228,0.4);
+
+    box-shadow:
+        0 0 20px
+        rgba(72,202,228,0.2);
+
+    transform:
+        translateY(50px);
+}
+
+
+.foto img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+}
+
+
+.foto.animar {
+
+    opacity: 1;
+}
+
+
+.foto1.animar {
+
+    animation:
+        entrarIzquierda
+        1s
+        ease
+        forwards;
+}
+
+
+.foto2.animar {
+
+    animation:
+        entrarCentro
+        1s
+        ease
+        forwards;
+}
+
+
+.foto3.animar {
+
+    animation:
+        entrarDerecha
+        1s
+        ease
+        forwards;
+}
+
+
+.numero {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    padding: 12px;
+
+    background:
+        rgba(0,0,0,0.7);
+
+    color: #90e0ef;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 60px;
+
+    color: #90e0ef;
+
+    padding-bottom: 30px;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes aparecerHack {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes alarma {
+
+    from {
+        transform:
+            scale(1);
+    }
+
+    to {
+        transform:
+            scale(1.2);
+    }
+}
+
+
+@keyframes parpadeo {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+
+@keyframes entradaRamo {
+
+    0% {
+
+        transform:
+            scale(0)
+            translateY(200px)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+
+    60% {
+
+        transform:
+            scale(1.08)
+            translateY(-15px)
+            rotate(4deg);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            scale(1)
+            translateY(0)
+            rotate(0);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes aparecerRamo {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes movimientoFlor {
+
+    0%,
+    100% {
+
+        margin-top: 0;
+    }
+
+    50% {
+
+        margin-top: -7px;
+    }
+}
+
+
+@keyframes florSubir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg)
+            scale(0.3);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            translateX(60px)
+            rotate(180deg)
+            scale(1.1);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            translateX(-80px)
+            rotate(360deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes entrarIzquierda {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-150px)
+            rotate(-10deg);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+}
+
+
+@keyframes entrarCentro {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(150px)
+            scale(0.7);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes entrarDerecha {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(150px)
+            rotate(10deg);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contenedor {
+
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+
+    .ramoCSS {
+
+        transform:
+            scale(0.75)
+            translateY(150px);
+    }
+
+
+    .fotos {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .foto img {
+
+        height: 350px;
+    }
+
+
+    .tarjeta {
+
+        padding: 25px;
+    }
+
+
+    .hackContenido h1 {
+
+        letter-spacing: 2px;
+    }
+
+
+    .alerta {
+
+        font-size: 60px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .ramoCSS {
+
+        transform:
+            scale(0.65)
+            translateY(150px);
+    }
+
+}
